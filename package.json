@@ -54,7 +54,7 @@
     "url": "https://github.com/czargutz/api-common-responses/issues"
   },
   "exports": {
-    "request": {
+    ".": {
       "import": "./dist/request.es.js",
       "require": "./dist/request.umd.js"
     }
