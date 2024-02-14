@@ -1,25 +1,38 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import reactLogo from "/react.svg";
+import "./App.css";
+
+import request from "./request";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [urlBase, setUrlBase] = useState(
+    "https://jsonplaceholder.typicode.com/todos/1"
+  );
+
+  const handleRequest = () => {
+    request(urlBase, {
+      method: "GET",
+      headers: { "Content-Type": "application/json" },
+    }).then((a) => {
+      console.log(a);
+    });
+  };
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
+      <div data-testid="app_test_id">
         <a href="https://react.dev" target="_blank">
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <h1>Vite + React</h1>
+      <h1>api-common-responses</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+        <input
+          value={urlBase}
+          onChange={(event) => setUrlBase(event.target.value)}
+        />
+        <button data-testid="request_action_test_id" onClick={handleRequest}>
+          Request
         </button>
         <p>
           Edit <code>src/App.jsx</code> and save to test HMR
@@ -29,7 +42,7 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
