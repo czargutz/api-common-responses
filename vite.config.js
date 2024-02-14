@@ -1,7 +1,24 @@
+import path from "path";
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 
 export default defineConfig({
+  plugins: [react()],
+  build: {
+    lib: {
+      entry: path.resolve("src", "src/request.jsx"),
+      name: "api-common-responses",
+      fileName: "request.jsx",
+    },
+    rollupOptions: {
+      external: ["react", "react-dom"],
+      output: {
+        globals: {
+          react: "React",
+        },
+      },
+    },
+  },
   server: {
     port: 3000,
     open: true,
@@ -12,7 +29,6 @@ export default defineConfig({
       protocol: "wss",
     },
   },
-  plugins: [react()],
   test: {
     globals: true,
     environment: "jsdom",
