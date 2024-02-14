@@ -43,7 +43,7 @@ export default defineConfig({
       functions: 40,
       branches: 40,
       statements: 40,
-      exclude: [".eslintrc.cjs", "src/main.jsx"],
+      exclude: [".eslintrc.cjs", "src/main.jsx", "coverage"],
     },
   },
 });
