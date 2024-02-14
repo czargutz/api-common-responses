@@ -31,5 +31,25 @@
     "vite": "^5.1.0",
     "vitest": "^1.2.2",
     "vitest-fetch-mock": "^0.2.2"
-  }
+  },
+  "description": "Library to standardize API responses for easy control from the frontend",
+  "main": "vite.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/czargutz/api-common-responses.git"
+  },
+  "keywords": [
+    "request",
+    "homologate",
+    "api",
+    "fetch",
+    "js",
+    "react"
+  ],
+  "author": "Cesar Gutierrez Espitia, Jesus Francisco Garcia Esparza",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/czargutz/api-common-responses/issues"
+  },
+  "homepage": "https://github.com/czargutz/api-common-responses#readme"
 }
