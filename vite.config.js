@@ -6,9 +6,9 @@ export default defineConfig({
   plugins: [react()],
   build: {
     lib: {
-      entry: path.resolve("src", "request"),
+      entry: path.resolve("src", "request.jsx"),
       name: "api-common-responses",
-      fileName: "request",
+      fileName: (format) => `request.${format}.js`,
     },
     rollupOptions: {
       external: ["react", "react-dom"],
