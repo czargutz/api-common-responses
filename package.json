@@ -48,7 +48,7 @@
   "author": "Cesar Gutierrez Espitia, Jesus Francisco Garcia Esparza",
   "description": "Library to standardize API responses for easy control from the frontend",
   "homepage": "https://github.com/czargutz/api-common-responses#readme",
-  "main": "./dist/request.umd.js",
+  "main": "src/request.jsx",
   "module": "./dist/request.es.js",
   "bugs": {
     "url": "https://github.com/czargutz/api-common-responses/issues"
